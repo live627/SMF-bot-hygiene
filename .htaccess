@@ -1,0 +1,757 @@
+# Finally re-allowing bingbot - with crawl-delay in robots.txt it's OK
+# yandex blocked, does not honor crawl-delay
+# Other very bad guys: claudebot, GoogleOther, facebook.com/externalhit
+# Including, now, blank useragents as of 9/2/24
+BrowserMatchNoCase 01h4x.com bad_bot
+BrowserMatchNoCase 360spider bad_bot
+BrowserMatchNoCase 404checker bad_bot
+BrowserMatchNoCase 404enemy bad_bot
+BrowserMatchNoCase 80legs bad_bot
+BrowserMatchNoCase ^$ bad_bot
+BrowserMatchNoCase abonti bad_bot
+BrowserMatchNoCase aboundex bad_bot
+BrowserMatchNoCase aboundexbot bad_bot
+BrowserMatchNoCase acunetix bad_bot
+BrowserMatchNoCase admantx bad_bot
+BrowserMatchNoCase adscanner bad_bot
+BrowserMatchNoCase adstxtcrawlertp bad_bot
+BrowserMatchNoCase afd-verbotsverfahren bad_bot
+BrowserMatchNoCase ahrefsbot bad_bot
+BrowserMatchNoCase aibot bad_bot
+BrowserMatchNoCase aihitbot bad_bot
+BrowserMatchNoCase aipbot bad_bot
+BrowserMatchNoCase alexibot bad_bot
+BrowserMatchNoCase 'alittle client' bad_bot
+BrowserMatchNoCase alligator bad_bot
+BrowserMatchNoCase allsubmitter bad_bot
+BrowserMatchNoCase alphabot bad_bot
+BrowserMatchNoCase anarchie bad_bot
+BrowserMatchNoCase anarchy bad_bot
+BrowserMatchNoCase anarchy99 bad_bot
+BrowserMatchNoCase ankit bad_bot
+BrowserMatchNoCase anthill bad_bot
+BrowserMatchNoCase anthropic-ai bad_bot
+BrowserMatchNoCase apexoo bad_bot
+BrowserMatchNoCase archive.org_bot bad_bot
+BrowserMatchNoCase arquivo-web-crawler bad_bot
+BrowserMatchNoCase arquivo.pt bad_bot
+BrowserMatchNoCase aspiegel bad_bot
+BrowserMatchNoCase aspseek bad_bot
+BrowserMatchNoCase asterias bad_bot
+BrowserMatchNoCase atomseobot bad_bot
+BrowserMatchNoCase attach bad_bot
+BrowserMatchNoCase autoemailspider bad_bot
+BrowserMatchNoCase awario.com bad_bot
+BrowserMatchNoCase awariobot bad_bot
+BrowserMatchNoCase awariorssbot bad_bot
+BrowserMatchNoCase awariosmartbot bad_bot
+BrowserMatchNoCase backdoorbot bad_bot
+BrowserMatchNoCase backlink-ceck bad_bot
+BrowserMatchNoCase backlink-check bad_bot
+BrowserMatchNoCase backlinkcrawler bad_bot
+BrowserMatchNoCase backlinksextendedbot bad_bot
+BrowserMatchNoCase backstreet bad_bot
+BrowserMatchNoCase backweb bad_bot
+BrowserMatchNoCase badass bad_bot
+BrowserMatchNoCase bandit bad_bot
+BrowserMatchNoCase barkrowler bad_bot
+BrowserMatchNoCase batchftp bad_bot
+BrowserMatchNoCase 'battleztar bazinga' bad_bot
+BrowserMatchNoCase bbbike bad_bot
+BrowserMatchNoCase bdcbot bad_bot
+BrowserMatchNoCase bdfetch bad_bot
+BrowserMatchNoCase betabot bad_bot
+BrowserMatchNoCase bigfoot bad_bot
+BrowserMatchNoCase bitacle bad_bot
+BrowserMatchNoCase 'black hole' bad_bot
+BrowserMatchNoCase blackboard bad_bot
+BrowserMatchNoCase blackwidow bad_bot
+BrowserMatchNoCase blexbot bad_bot
+BrowserMatchNoCase blow bad_bot
+BrowserMatchNoCase blowfish bad_bot
+BrowserMatchNoCase boardreader bad_bot
+BrowserMatchNoCase bolt bad_bot
+BrowserMatchNoCase bomborabot bad_bot
+BrowserMatchNoCase botalot bad_bot
+BrowserMatchNoCase brandprotect bad_bot
+BrowserMatchNoCase brandwatch bad_bot
+BrowserMatchNoCase buck bad_bot
+BrowserMatchNoCase buddy bad_bot
+BrowserMatchNoCase builtbottough bad_bot
+BrowserMatchNoCase builtwith bad_bot
+BrowserMatchNoCase bullseye bad_bot
+BrowserMatchNoCase bunnyslippers bad_bot
+BrowserMatchNoCase buzzsumo bad_bot
+BrowserMatchNoCase bytespider bad_bot
+BrowserMatchNoCase cah.io.community bad_bot
+BrowserMatchNoCase calculon bad_bot
+BrowserMatchNoCase catexplorador bad_bot
+BrowserMatchNoCase cazoodlebot bad_bot
+BrowserMatchNoCase ccbot bad_bot
+BrowserMatchNoCase cegbfeieh bad_bot
+BrowserMatchNoCase censysinspect bad_bot
+BrowserMatchNoCase chatgpt-user bad_bot
+BrowserMatchNoCase check1.exe bad_bot
+BrowserMatchNoCase cheesebot bad_bot
+BrowserMatchNoCase cherrypicker bad_bot
+BrowserMatchNoCase cheteam bad_bot
+BrowserMatchNoCase chinaclaw bad_bot
+BrowserMatchNoCase chlooe bad_bot
+BrowserMatchNoCase citoid bad_bot
+BrowserMatchNoCase claritybot bad_bot
+BrowserMatchNoCase clark-crawler bad_bot
+BrowserMatchNoCase claudebot bad_bot
+BrowserMatchNoCase cliqzbot bad_bot
+BrowserMatchNoCase 'cloud mapping' bad_bot
+BrowserMatchNoCase coccocbot bad_bot
+BrowserMatchNoCase cocolyzebot bad_bot
+BrowserMatchNoCase code87 bad_bot
+BrowserMatchNoCase cogentbot bad_bot
+BrowserMatchNoCase cognitiveseo bad_bot
+BrowserMatchNoCase cohere-ai bad_bot
+BrowserMatchNoCase collector bad_bot
+BrowserMatchNoCase com.plumanalytics bad_bot
+BrowserMatchNoCase commoncrawl bad_bot
+BrowserMatchNoCase copier bad_bot
+BrowserMatchNoCase copyrightcheck bad_bot
+BrowserMatchNoCase copyscape bad_bot
+BrowserMatchNoCase cosmos bad_bot
+BrowserMatchNoCase craftbot bad_bot
+BrowserMatchNoCase crawler.feedback bad_bot
+BrowserMatchNoCase crawler4j bad_bot
+BrowserMatchNoCase 'crawling at home project' bad_bot
+BrowserMatchNoCase crazywebcrawler bad_bot
+BrowserMatchNoCase crescent bad_bot
+BrowserMatchNoCase crunchbot bad_bot
+BrowserMatchNoCase cshttp bad_bot
+BrowserMatchNoCase curious bad_bot
+BrowserMatchNoCase custo bad_bot
+BrowserMatchNoCase cyotekwebcopy bad_bot
+BrowserMatchNoCase databasedrivermysqli bad_bot
+BrowserMatchNoCase datacha0s bad_bot
+BrowserMatchNoCase dataforseo-bot bad_bot
+BrowserMatchNoCase dataforseo.com bad_bot
+BrowserMatchNoCase dataforseobot bad_bot
+BrowserMatchNoCase dblbot bad_bot
+BrowserMatchNoCase demandbase-bot bad_bot
+BrowserMatchNoCase demon bad_bot
+BrowserMatchNoCase deusu bad_bot
+BrowserMatchNoCase devil bad_bot
+BrowserMatchNoCase digincore bad_bot
+BrowserMatchNoCase digitalpebble bad_bot
+BrowserMatchNoCase diibot bad_bot
+BrowserMatchNoCase dirbuster bad_bot
+BrowserMatchNoCase disco bad_bot
+BrowserMatchNoCase discobot bad_bot
+BrowserMatchNoCase discoverybot bad_bot
+BrowserMatchNoCase dispatch bad_bot
+BrowserMatchNoCase dittospyder bad_bot
+BrowserMatchNoCase dnbcrawler-analytics bad_bot
+BrowserMatchNoCase dnyzbot bad_bot
+BrowserMatchNoCase domainappender bad_bot
+BrowserMatchNoCase domaincrawler bad_bot
+BrowserMatchNoCase 'domains project' bad_bot
+BrowserMatchNoCase domainsigmacrawler bad_bot
+BrowserMatchNoCase domainsproject.org bad_bot
+BrowserMatchNoCase domainstatsbot bad_bot
+BrowserMatchNoCase domcopbot bad_bot
+BrowserMatchNoCase dotbot bad_bot
+BrowserMatchNoCase 'download wonder' bad_bot
+BrowserMatchNoCase dragonfly bad_bot
+BrowserMatchNoCase drip bad_bot
+BrowserMatchNoCase dsearch bad_bot
+BrowserMatchNoCase 'dts agent' bad_bot
+BrowserMatchNoCase easydl bad_bot
+BrowserMatchNoCase ebingbong bad_bot
+BrowserMatchNoCase ecatch bad_bot
+BrowserMatchNoCase eccp/1.0 bad_bot
+BrowserMatchNoCase ecxi bad_bot
+BrowserMatchNoCase eirgrabber bad_bot
+BrowserMatchNoCase 'email siphon' bad_bot
+BrowserMatchNoCase 'email wolf' bad_bot
+BrowserMatchNoCase erocrawler bad_bot
+BrowserMatchNoCase evc-batch bad_bot
+BrowserMatchNoCase evil bad_bot
+BrowserMatchNoCase exabot bad_bot
+BrowserMatchNoCase 'express webpictures' bad_bot
+BrowserMatchNoCase extlinksbot bad_bot
+BrowserMatchNoCase extractor bad_bot
+BrowserMatchNoCase extractorpro bad_bot
+BrowserMatchNoCase 'extreme picture finder' bad_bot
+BrowserMatchNoCase eyenetie bad_bot
+BrowserMatchNoCase ezooms bad_bot
+BrowserMatchNoCase facebook.com/externalhit bad_bot
+BrowserMatchNoCase facebookbot bad_bot
+BrowserMatchNoCase facebookscraper bad_bot
+BrowserMatchNoCase fdm bad_bot
+BrowserMatchNoCase femtosearchbot bad_bot
+BrowserMatchNoCase fhscan bad_bot
+BrowserMatchNoCase fimap bad_bot
+BrowserMatchNoCase firefox/7.0 bad_bot
+BrowserMatchNoCase flashget bad_bot
+BrowserMatchNoCase flunky bad_bot
+BrowserMatchNoCase foobot bad_bot
+BrowserMatchNoCase freeuploader bad_bot
+BrowserMatchNoCase friendlycrawler bad_bot
+BrowserMatchNoCase frontpage bad_bot
+BrowserMatchNoCase fuzz bad_bot
+BrowserMatchNoCase fyberspider bad_bot
+BrowserMatchNoCase fyrebot bad_bot
+BrowserMatchNoCase g-i-g-a-b-o-t bad_bot
+BrowserMatchNoCase galaxybot bad_bot
+BrowserMatchNoCase genieo bad_bot
+BrowserMatchNoCase germcrawler bad_bot
+BrowserMatchNoCase getintent bad_bot
+BrowserMatchNoCase getright bad_bot
+BrowserMatchNoCase getweb bad_bot
+BrowserMatchNoCase gigabot bad_bot
+BrowserMatchNoCase go!zilla bad_bot
+BrowserMatchNoCase go-ahead-got-it bad_bot
+BrowserMatchNoCase go-http-client bad_bot
+BrowserMatchNoCase googleother bad_bot
+BrowserMatchNoCase gopher bad_bot
+BrowserMatchNoCase gotit bad_bot
+BrowserMatchNoCase gozilla bad_bot
+BrowserMatchNoCase gptbot bad_bot
+BrowserMatchNoCase grabber bad_bot
+BrowserMatchNoCase grabnet bad_bot
+BrowserMatchNoCase grafula bad_bot
+BrowserMatchNoCase grapefx bad_bot
+BrowserMatchNoCase grapeshotcrawler bad_bot
+BrowserMatchNoCase gridbot bad_bot
+BrowserMatchNoCase gt::www bad_bot
+BrowserMatchNoCase haansoft bad_bot
+BrowserMatchNoCase haosouspider bad_bot
+BrowserMatchNoCase harvest bad_bot
+BrowserMatchNoCase havij bad_bot
+BrowserMatchNoCase headmasterseo bad_bot
+BrowserMatchNoCase heritrix bad_bot
+BrowserMatchNoCase hloader bad_bot
+BrowserMatchNoCase hmview bad_bot
+BrowserMatchNoCase honolulubot bad_bot
+BrowserMatchNoCase htmlparser bad_bot
+BrowserMatchNoCase http::lite bad_bot
+BrowserMatchNoCase httrack bad_bot
+BrowserMatchNoCase humanlinks bad_bot
+BrowserMatchNoCase hybridbot bad_bot
+BrowserMatchNoCase iblog bad_bot
+BrowserMatchNoCase id-search bad_bot
+BrowserMatchNoCase idbot bad_bot
+BrowserMatchNoCase idbte4m bad_bot
+BrowserMatchNoCase ilsebot bad_bot
+BrowserMatchNoCase 'image fetch' bad_bot
+BrowserMatchNoCase 'image sucker' bad_bot
+BrowserMatchNoCase imagesift.com bad_bot
+BrowserMatchNoCase imagesiftbot bad_bot
+BrowserMatchNoCase indeedbot bad_bot
+BrowserMatchNoCase 'indy library' bad_bot
+BrowserMatchNoCase infonavirobot bad_bot
+BrowserMatchNoCase 'information security team infrasec scanner' bad_bot
+BrowserMatchNoCase infotekies bad_bot
+BrowserMatchNoCase 'infrasec scanner' bad_bot
+BrowserMatchNoCase instabid bad_bot
+BrowserMatchNoCase intelliseek bad_bot
+BrowserMatchNoCase interget bad_bot
+BrowserMatchNoCase 'internet ninja' bad_bot
+BrowserMatchNoCase internetmeasurement bad_bot
+BrowserMatchNoCase internetseer bad_bot
+BrowserMatchNoCase 'internetvista monitor' bad_bot
+BrowserMatchNoCase ips-agent bad_bot
+BrowserMatchNoCase iria bad_bot
+BrowserMatchNoCase irlbot bad_bot
+BrowserMatchNoCase isitwp.com bad_bot
+BrowserMatchNoCase iskanie bad_bot
+BrowserMatchNoCase istellabot bad_bot
+BrowserMatchNoCase iubenda-radar bad_bot
+BrowserMatchNoCase jamesbot bad_bot
+BrowserMatchNoCase jbrofuzz bad_bot
+BrowserMatchNoCase jennybot bad_bot
+BrowserMatchNoCase jetcar bad_bot
+BrowserMatchNoCase jetty bad_bot
+BrowserMatchNoCase jikespider bad_bot
+BrowserMatchNoCase 'joc web spider' bad_bot
+BrowserMatchNoCase joomla bad_bot
+BrowserMatchNoCase jorgee bad_bot
+BrowserMatchNoCase justview bad_bot
+BrowserMatchNoCase jyxobot bad_bot
+BrowserMatchNoCase 'kenjin spider' bad_bot
+BrowserMatchNoCase 'keybot translation-search-machine' bad_bot
+BrowserMatchNoCase keys-so-bot bad_bot
+BrowserMatchNoCase 'keyword density' bad_bot
+BrowserMatchNoCase kinza bad_bot
+BrowserMatchNoCase kozmosbot bad_bot
+BrowserMatchNoCase lanshanbot bad_bot
+BrowserMatchNoCase larbin bad_bot
+BrowserMatchNoCase leap bad_bot
+BrowserMatchNoCase leechftp bad_bot
+BrowserMatchNoCase leechget bad_bot
+BrowserMatchNoCase lexibot bad_bot
+BrowserMatchNoCase lftp bad_bot
+BrowserMatchNoCase libweb bad_bot
+BrowserMatchNoCase libwhisker bad_bot
+BrowserMatchNoCase liebaofast bad_bot
+BrowserMatchNoCase lightspeedsystems bad_bot
+BrowserMatchNoCase likse bad_bot
+BrowserMatchNoCase linkbot bad_bot
+BrowserMatchNoCase linkdexbot bad_bot
+BrowserMatchNoCase linkextractorpro bad_bot
+BrowserMatchNoCase linkfluence bad_bot
+BrowserMatchNoCase linkpadbot bad_bot
+BrowserMatchNoCase linkscan bad_bot
+BrowserMatchNoCase linksmanager bad_bot
+BrowserMatchNoCase linkwalker bad_bot
+BrowserMatchNoCase linqiametadatadownloaderbot bad_bot
+BrowserMatchNoCase linqiarssbot bad_bot
+BrowserMatchNoCase linqiascrapebot bad_bot
+BrowserMatchNoCase lipperhey bad_bot
+BrowserMatchNoCase 'lipperhey spider' bad_bot
+BrowserMatchNoCase litemage_walker bad_bot
+BrowserMatchNoCase lmspider bad_bot
+BrowserMatchNoCase lnspiderguy bad_bot
+BrowserMatchNoCase ltx71 bad_bot
+BrowserMatchNoCase lwp-request bad_bot
+BrowserMatchNoCase lwp-trivial bad_bot
+BrowserMatchNoCase lwp::simple bad_bot
+BrowserMatchNoCase mag-net bad_bot
+BrowserMatchNoCase magnet bad_bot
+BrowserMatchNoCase magpie-crawler bad_bot
+BrowserMatchNoCase majestic-seo bad_bot
+BrowserMatchNoCase majestic12 bad_bot
+BrowserMatchNoCase 'majestic seo' bad_bot
+BrowserMatchNoCase markmonitor bad_bot
+BrowserMatchNoCase markwatch bad_bot
+BrowserMatchNoCase 'mass downloader' bad_bot
+BrowserMatchNoCase masscan bad_bot
+BrowserMatchNoCase 'mata hari' bad_bot
+BrowserMatchNoCase mauibot bad_bot
+BrowserMatchNoCase mb2345browser bad_bot
+BrowserMatchNoCase 'meanpath bot' bad_bot
+BrowserMatchNoCase meanpathbot bad_bot
+BrowserMatchNoCase mediatoolkitbot bad_bot
+BrowserMatchNoCase mediawords bad_bot
+BrowserMatchNoCase megaindex.ru bad_bot
+BrowserMatchNoCase meta-externalagent bad_bot
+BrowserMatchNoCase metauri bad_bot
+BrowserMatchNoCase mfc_tear_sample bad_bot
+BrowserMatchNoCase micromessenger bad_bot
+BrowserMatchNoCase 'microsoft data access' bad_bot
+BrowserMatchNoCase 'microsoft url control' bad_bot
+BrowserMatchNoCase 'midown tool' bad_bot
+BrowserMatchNoCase miixpc bad_bot
+BrowserMatchNoCase minefield bad_bot
+BrowserMatchNoCase 'mister pix' bad_bot
+BrowserMatchNoCase 'moblie safari' bad_bot
+BrowserMatchNoCase mojeek bad_bot
+BrowserMatchNoCase mojeekbot bad_bot
+BrowserMatchNoCase mojolicious bad_bot
+BrowserMatchNoCase molokaibot bad_bot
+BrowserMatchNoCase 'morfeus fucking scanner' bad_bot
+BrowserMatchNoCase mozlila bad_bot
+BrowserMatchNoCase mqqbrowser bad_bot
+BrowserMatchNoCase mr.4x3 bad_bot
+BrowserMatchNoCase msfrontpage bad_bot
+BrowserMatchNoCase msiecrawler bad_bot
+BrowserMatchNoCase msrabot bad_bot
+BrowserMatchNoCase mtrobot bad_bot
+BrowserMatchNoCase muhstik-scan bad_bot
+BrowserMatchNoCase musobot bad_bot
+BrowserMatchNoCase 'name intelligence' bad_bot
+BrowserMatchNoCase nameprotect bad_bot
+BrowserMatchNoCase navroad bad_bot
+BrowserMatchNoCase nearsite bad_bot
+BrowserMatchNoCase needle bad_bot
+BrowserMatchNoCase nessus bad_bot
+BrowserMatchNoCase 'net vampire' bad_bot
+BrowserMatchNoCase netants bad_bot
+BrowserMatchNoCase netcraft bad_bot
+BrowserMatchNoCase 'netestate ne crawler' bad_bot
+BrowserMatchNoCase netlyzer bad_bot
+BrowserMatchNoCase netmechanic bad_bot
+BrowserMatchNoCase netspider bad_bot
+BrowserMatchNoCase nettrack bad_bot
+BrowserMatchNoCase netvibes bad_bot
+BrowserMatchNoCase netzip bad_bot
+BrowserMatchNoCase nextgensearchbot bad_bot
+BrowserMatchNoCase nibbler bad_bot
+BrowserMatchNoCase nicerspro bad_bot
+BrowserMatchNoCase niki-bot bad_bot
+BrowserMatchNoCase nikto bad_bot
+BrowserMatchNoCase nimblecrawler bad_bot
+BrowserMatchNoCase nimbostratus bad_bot
+BrowserMatchNoCase ninja bad_bot
+BrowserMatchNoCase nmap bad_bot
+BrowserMatchNoCase npbot bad_bot
+BrowserMatchNoCase nuclei bad_bot
+BrowserMatchNoCase nutch bad_bot
+BrowserMatchNoCase obot bad_bot
+BrowserMatchNoCase octopus bad_bot
+BrowserMatchNoCase 'offline explorer' bad_bot
+BrowserMatchNoCase 'offline navigator' bad_bot
+BrowserMatchNoCase omgili bad_bot
+BrowserMatchNoCase oncrawl bad_bot
+BrowserMatchNoCase openai bad_bot
+BrowserMatchNoCase openai.com bad_bot
+BrowserMatchNoCase openfind bad_bot
+BrowserMatchNoCase openlinkprofiler bad_bot
+BrowserMatchNoCase openvas bad_bot
+BrowserMatchNoCase orangebot bad_bot
+BrowserMatchNoCase orangespider bad_bot
+BrowserMatchNoCase outclicksbot bad_bot
+BrowserMatchNoCase outfoxbot bad_bot
+BrowserMatchNoCase 'page analyzer' bad_bot
+BrowserMatchNoCase 'page scorer' bad_bot
+BrowserMatchNoCase pageanalyzer bad_bot
+BrowserMatchNoCase pagegrabber bad_bot
+BrowserMatchNoCase pagescorer bad_bot
+BrowserMatchNoCase pagething.com bad_bot
+BrowserMatchNoCase pandalytics bad_bot
+BrowserMatchNoCase panscient bad_bot
+BrowserMatchNoCase 'papa foto' bad_bot
+BrowserMatchNoCase pavuk bad_bot
+BrowserMatchNoCase pcbrowser bad_bot
+BrowserMatchNoCase pecl::http bad_bot
+BrowserMatchNoCase peoplepal bad_bot
+BrowserMatchNoCase petalbot bad_bot
+BrowserMatchNoCase phpcrawl bad_bot
+BrowserMatchNoCase pi-monster bad_bot
+BrowserMatchNoCase picscout bad_bot
+BrowserMatchNoCase picsearch bad_bot
+BrowserMatchNoCase picturefinder bad_bot
+BrowserMatchNoCase piepmatz bad_bot
+BrowserMatchNoCase pimonster bad_bot
+BrowserMatchNoCase pixray bad_bot
+BrowserMatchNoCase pleasecrawl bad_bot
+BrowserMatchNoCase plumanalytics bad_bot
+BrowserMatchNoCase pockey bad_bot
+BrowserMatchNoCase poe-component-client-http bad_bot
+BrowserMatchNoCase 'polaris version' bad_bot
+BrowserMatchNoCase probe-image-size bad_bot
+BrowserMatchNoCase probethenet bad_bot
+BrowserMatchNoCase propowerbot bad_bot
+BrowserMatchNoCase prowebwalker bad_bot
+BrowserMatchNoCase proximic bad_bot
+BrowserMatchNoCase psbot bad_bot
+BrowserMatchNoCase pu_in bad_bot
+BrowserMatchNoCase pump bad_bot
+BrowserMatchNoCase pxbroker bad_bot
+BrowserMatchNoCase pycurl bad_bot
+BrowserMatchNoCase python-requests bad_bot
+BrowserMatchNoCase 'queryn metasearch' bad_bot
+BrowserMatchNoCase quick-crawler bad_bot
+BrowserMatchNoCase rainbot bad_bot
+BrowserMatchNoCase rankactive bad_bot
+BrowserMatchNoCase rankactivelinkbot bad_bot
+BrowserMatchNoCase rankflex bad_bot
+BrowserMatchNoCase rankingbot bad_bot
+BrowserMatchNoCase rankingbot2 bad_bot
+BrowserMatchNoCase rankivabot bad_bot
+BrowserMatchNoCase rankurbot bad_bot
+BrowserMatchNoCase re-re bad_bot
+BrowserMatchNoCase realdownload bad_bot
+BrowserMatchNoCase reaper bad_bot
+BrowserMatchNoCase rebelmouse bad_bot
+BrowserMatchNoCase recorder bad_bot
+BrowserMatchNoCase redesscrapy bad_bot
+BrowserMatchNoCase reget bad_bot
+BrowserMatchNoCase repomonkey bad_bot
+BrowserMatchNoCase ripper bad_bot
+BrowserMatchNoCase ripz bad_bot
+BrowserMatchNoCase rocketcrawler bad_bot
+BrowserMatchNoCase rogerbot bad_bot
+BrowserMatchNoCase rssingbot bad_bot
+BrowserMatchNoCase s1z.ru bad_bot
+BrowserMatchNoCase salesintelligent bad_bot
+BrowserMatchNoCase satoristudio.net bad_bot
+BrowserMatchNoCase sbider bad_bot
+BrowserMatchNoCase scalaj-http bad_bot
+BrowserMatchNoCase scan.lol bad_bot
+BrowserMatchNoCase scanalert bad_bot
+BrowserMatchNoCase scanbot bad_bot
+BrowserMatchNoCase scoutjet bad_bot
+BrowserMatchNoCase scrapy bad_bot
+BrowserMatchNoCase screaming bad_bot
+BrowserMatchNoCase screenerbot bad_bot
+BrowserMatchNoCase screpybot bad_bot
+BrowserMatchNoCase searchestate bad_bot
+BrowserMatchNoCase searchmetricsbot bad_bot
+BrowserMatchNoCase seekport bad_bot
+BrowserMatchNoCase seekportbot bad_bot
+BrowserMatchNoCase semanticjuice bad_bot
+BrowserMatchNoCase semrush bad_bot
+BrowserMatchNoCase semrushbot bad_bot
+BrowserMatchNoCase sentibot bad_bot
+BrowserMatchNoCase senutobot bad_bot
+BrowserMatchNoCase seobility bad_bot
+BrowserMatchNoCase seobilitybot bad_bot
+BrowserMatchNoCase seocompany.store bad_bot
+BrowserMatchNoCase seokicks bad_bot
+BrowserMatchNoCase seokicks-robot bad_bot
+BrowserMatchNoCase seolyt bad_bot
+BrowserMatchNoCase seolyticscrawler bad_bot
+BrowserMatchNoCase seomoz bad_bot
+BrowserMatchNoCase seoprofiler bad_bot
+BrowserMatchNoCase seoscanners bad_bot
+BrowserMatchNoCase seositecheckup bad_bot
+BrowserMatchNoCase seostar bad_bot
+BrowserMatchNoCase seostats bad_bot
+BrowserMatchNoCase serpstatbot bad_bot
+BrowserMatchNoCase sexsearcher bad_bot
+BrowserMatchNoCase shodan bad_bot
+BrowserMatchNoCase siphon bad_bot
+BrowserMatchNoCase sistrix bad_bot
+BrowserMatchNoCase 'site sucker' bad_bot
+BrowserMatchNoCase sitebeam bad_bot
+BrowserMatchNoCase sitechecker.pro bad_bot
+BrowserMatchNoCase sitecheckerbotcrawler bad_bot
+BrowserMatchNoCase siteexplorer bad_bot
+BrowserMatchNoCase siteimprove bad_bot
+BrowserMatchNoCase sitelockspider bad_bot
+BrowserMatchNoCase siteripz bad_bot
+BrowserMatchNoCase sitesnagger bad_bot
+BrowserMatchNoCase sitesucker bad_bot
+BrowserMatchNoCase sitevigil bad_bot
+BrowserMatchNoCase slysearch bad_bot
+BrowserMatchNoCase smartdownload bad_bot
+BrowserMatchNoCase smtbot bad_bot
+BrowserMatchNoCase snake bad_bot
+BrowserMatchNoCase snapbot bad_bot
+BrowserMatchNoCase snoopy bad_bot
+BrowserMatchNoCase socialrankiobot bad_bot
+BrowserMatchNoCase sociscraper bad_bot
+BrowserMatchNoCase sosospider bad_bot
+BrowserMatchNoCase sottopop bad_bot
+BrowserMatchNoCase sp_auditbot bad_bot
+BrowserMatchNoCase spacebison bad_bot
+BrowserMatchNoCase spammen bad_bot
+BrowserMatchNoCase spankbot bad_bot
+BrowserMatchNoCase spanner bad_bot
+BrowserMatchNoCase spbot bad_bot
+BrowserMatchNoCase spider_bot bad_bot
+BrowserMatchNoCase spider_bot/3.0 bad_bot
+BrowserMatchNoCase spinn3r bad_bot
+BrowserMatchNoCase sputnikbot bad_bot
+BrowserMatchNoCase spyfu bad_bot
+BrowserMatchNoCase sqlmap bad_bot
+BrowserMatchNoCase sqlworm bad_bot
+BrowserMatchNoCase sqworm bad_bot
+BrowserMatchNoCase steeler bad_bot
+BrowserMatchNoCase stripper bad_bot
+BrowserMatchNoCase sucker bad_bot
+BrowserMatchNoCase sucuri bad_bot
+BrowserMatchNoCase superbot bad_bot
+BrowserMatchNoCase superhttp bad_bot
+BrowserMatchNoCase surfbot bad_bot
+BrowserMatchNoCase surveybot bad_bot
+BrowserMatchNoCase suzuran bad_bot
+BrowserMatchNoCase swiftbot bad_bot
+BrowserMatchNoCase sysscan bad_bot
+BrowserMatchNoCase szukacz bad_bot
+BrowserMatchNoCase t0phackteam bad_bot
+BrowserMatchNoCase t8abot bad_bot
+BrowserMatchNoCase takeout bad_bot
+BrowserMatchNoCase teleport bad_bot
+BrowserMatchNoCase teleportpro bad_bot
+BrowserMatchNoCase telesoft bad_bot
+BrowserMatchNoCase telesphoreo bad_bot
+BrowserMatchNoCase telesphorep bad_bot
+BrowserMatchNoCase 'the intraformant' bad_bot
+BrowserMatchNoCase thenomad bad_bot
+BrowserMatchNoCase thumbor bad_bot
+BrowserMatchNoCase tighttwatbot bad_bot
+BrowserMatchNoCase tinytestbot bad_bot
+BrowserMatchNoCase titan bad_bot
+BrowserMatchNoCase toata bad_bot
+BrowserMatchNoCase toweyabot bad_bot
+BrowserMatchNoCase tracemyfile bad_bot
+BrowserMatchNoCase trendiction bad_bot
+BrowserMatchNoCase trendiction.com bad_bot
+BrowserMatchNoCase trendiction.de bad_bot
+BrowserMatchNoCase trendictionbot bad_bot
+BrowserMatchNoCase true_robot bad_bot
+BrowserMatchNoCase turingos bad_bot
+BrowserMatchNoCase turnitin bad_bot
+BrowserMatchNoCase turnitinbot bad_bot
+BrowserMatchNoCase twengabot bad_bot
+BrowserMatchNoCase twice bad_bot
+BrowserMatchNoCase typhoeus bad_bot
+BrowserMatchNoCase ubermetrics-technologies.com bad_bot
+BrowserMatchNoCase unisterbot bad_bot
+BrowserMatchNoCase upflow bad_bot
+BrowserMatchNoCase urly.warning bad_bot
+BrowserMatchNoCase 'urly warning' bad_bot
+BrowserMatchNoCase v-bot bad_bot
+BrowserMatchNoCase vacuum bad_bot
+BrowserMatchNoCase vagabondo bad_bot
+BrowserMatchNoCase 'vb project' bad_bot
+BrowserMatchNoCase vci bad_bot
+BrowserMatchNoCase velenpublicwebcrawler bad_bot
+BrowserMatchNoCase vericitecrawler bad_bot
+BrowserMatchNoCase vidiblescraper bad_bot
+BrowserMatchNoCase virusdie bad_bot
+BrowserMatchNoCase voideye bad_bot
+BrowserMatchNoCase voil bad_bot
+BrowserMatchNoCase voltron bad_bot
+BrowserMatchNoCase voyagerx.com bad_bot
+BrowserMatchNoCase wallpapers bad_bot
+BrowserMatchNoCase wallpapers/3.0 bad_bot
+BrowserMatchNoCase wallpapershd bad_bot
+BrowserMatchNoCase wasalive-bot bad_bot
+BrowserMatchNoCase wbsearchbot bad_bot
+BrowserMatchNoCase 'web auto' bad_bot
+BrowserMatchNoCase 'web collage' bad_bot
+BrowserMatchNoCase 'web enhancer' bad_bot
+BrowserMatchNoCase 'web fetch' bad_bot
+BrowserMatchNoCase 'web fuck' bad_bot
+BrowserMatchNoCase 'web pix' bad_bot
+BrowserMatchNoCase 'web sauger' bad_bot
+BrowserMatchNoCase 'web sucker' bad_bot
+BrowserMatchNoCase webalta bad_bot
+BrowserMatchNoCase webauto bad_bot
+BrowserMatchNoCase webbandit bad_bot
+BrowserMatchNoCase webcollage bad_bot
+BrowserMatchNoCase webcopier bad_bot
+BrowserMatchNoCase webdav bad_bot
+BrowserMatchNoCase webenhancer bad_bot
+BrowserMatchNoCase webfetch bad_bot
+BrowserMatchNoCase webfuck bad_bot
+BrowserMatchNoCase webgains-bot bad_bot
+BrowserMatchNoCase 'webgo is' bad_bot
+BrowserMatchNoCase webimagecollector bad_bot
+BrowserMatchNoCase webleacher bad_bot
+BrowserMatchNoCase webmasterworldforumbot bad_bot
+BrowserMatchNoCase webmeup-crawler bad_bot
+BrowserMatchNoCase webpix bad_bot
+BrowserMatchNoCase webpros.com bad_bot
+BrowserMatchNoCase webprosbot bad_bot
+BrowserMatchNoCase webreaper bad_bot
+BrowserMatchNoCase websauger bad_bot
+BrowserMatchNoCase webshag bad_bot
+BrowserMatchNoCase 'website quester' bad_bot
+BrowserMatchNoCase websiteextractor bad_bot
+BrowserMatchNoCase websitequester bad_bot
+BrowserMatchNoCase webster bad_bot
+BrowserMatchNoCase webstripper bad_bot
+BrowserMatchNoCase websucker bad_bot
+BrowserMatchNoCase webwhacker bad_bot
+BrowserMatchNoCase webzip bad_bot
+BrowserMatchNoCase wellknownbot bad_bot
+BrowserMatchNoCase wesee bad_bot
+BrowserMatchNoCase whack bad_bot
+BrowserMatchNoCase whacker bad_bot
+BrowserMatchNoCase whatweb bad_bot
+BrowserMatchNoCase 'who.is bot' bad_bot
+BrowserMatchNoCase widow bad_bot
+BrowserMatchNoCase winhttrack bad_bot
+BrowserMatchNoCase 'wiseguys robot' bad_bot
+BrowserMatchNoCase wisenutbot bad_bot
+BrowserMatchNoCase wonderbot bad_bot
+BrowserMatchNoCase woobot bad_bot
+BrowserMatchNoCase wotbox bad_bot
+BrowserMatchNoCase wprecon bad_bot
+BrowserMatchNoCase wpscan bad_bot
+BrowserMatchNoCase www-collector-e bad_bot
+BrowserMatchNoCase www-mechanize bad_bot
+BrowserMatchNoCase www::mechanize bad_bot
+BrowserMatchNoCase wwwoffle bad_bot
+BrowserMatchNoCase x09mozilla bad_bot
+BrowserMatchNoCase x22mozilla bad_bot
+BrowserMatchNoCase 'xaldon webspider' bad_bot
+BrowserMatchNoCase xaldon_webspider bad_bot
+BrowserMatchNoCase xenu bad_bot
+BrowserMatchNoCase xpymep1.exe bad_bot
+BrowserMatchNoCase yak bad_bot
+BrowserMatchNoCase yandex.com/bots bad_bot
+BrowserMatchNoCase youdaobot bad_bot
+BrowserMatchNoCase zade bad_bot
+BrowserMatchNoCase zauba bad_bot
+BrowserMatchNoCase zauba.io bad_bot
+BrowserMatchNoCase zermelo bad_bot
+BrowserMatchNoCase zeus bad_bot
+BrowserMatchNoCase zgrab bad_bot
+BrowserMatchNoCase zitebot bad_bot
+BrowserMatchNoCase zmeu bad_bot
+BrowserMatchNoCase zoombot bad_bot
+BrowserMatchNoCase zoominfobot bad_bot
+BrowserMatchNoCase zumbot bad_bot
+BrowserMatchNoCase zyborg bad_bot
+<Limit GET POST HEAD>
+Order Allow,Deny
+Allow from all
+Deny from env=bad_bot
+</Limit>
+# added by sjrb 9/25/24 - hack attempts, all sources say fraud risk
+Deny from 196.196.128.0/18
+# added by sjrb 9/26/24 - high vol hk/alibaba
+Deny from 47.246.0.0/16
+Deny from 47.244.0.0/15
+Deny from 47.235.0.0/16
+Deny from 47.236.0.0/14
+#added by sjrb 9/27/24 - high vol hk/alibaba
+Deny from 47.238.0.0/16
+Deny from 8.218.186.0/24
+#added by sjrb 10/7/24 - hack attempts
+Deny from 45.125.12.0/22
+#added by sjrb 10/9/24 - hack attempts
+Deny from 156.146.33.00/24
+Deny from 89.147.102.0/23
+#added by sjrb 10/23/24 - hack attempts
+Deny from 167.235.128.0/20
+#added by sjrb 10/25/24 - No more doing it piecemeal...  High volume, Not-a.brand RU dudes
+Deny from 88.201.0.0/16
+#added by sjrb 10/25/24 - No more doing it piecemeal...  High volume "likes" from China, Huawei
+Deny from 124.243.0.0/16
+Deny from 119.8.0.0/16
+Deny from 119.13.0.0/16
+Deny from 190.92.0.0/16
+Deny from 111.119.0.0/16
+#added by sjrb 10/28/24 - High volume "likes" from China, Huawei
+Deny from 166.108.192.0/19
+Deny from 49.0.200.0/21
+Deny from 159.138.96.0/20
+Deny from 114.119.176.0/20
+Deny from 110.238.104.0/21
+Deny from 94.74.80.0/20
+Deny from 101.44.160.0/20
+#added by sjrb 11/19/24 - High volume docker hack attempts from Romania
+Deny from 196.245.0.0/16
+#added by sjrb 11/20/24 - File sys hack attempts from HK
+Deny from 202.79.168.0/21
+#added by sjrb 11/21/24 - High volume "Likes" attack from Dallas, US, fraud risk site FastPlanet (updated 11/23/24)
+Deny from 104.239.0.0/16
+#added by sjrb 11/21/24 - High volume "Likes" attack from IT, fraud risk site Incubatec
+Deny from 84.33.192.0/18
+#added by sjrb 11/22/24 - Hack attempts from RU
+Deny from 92.255.57.0/24
+#added by sjrb 11/22/24 - Insanely high volume "Likes" attack from IT... Canada... UK...
+Deny from 45.43.80.0/22
+Deny from 45.192.0.0/12
+Deny from 206.41.160.0/19
+#added by sjrb 11/23/24 - More high volume "Likes" attacks, FastPlanet, FutureTech, WebObjects
+Deny from 45.41.128.0/18
+Deny from 45.61.64.0/18
+Deny from 45.192.146.0/24
+Deny from 64.137.80.0/22
+#added by sjrb 11/25/24 - Just random crawlers...  High volume, distributed...
+Deny from 193.233.228.0/22
+Deny from 148.178.0.0/16
+Deny from 91.243.88.0/22
+#added by sjrb 12/8/24 - Crawlers...  High volume, distributed... TransitTraffic, Fine Group
+Deny from 193.233.82.0/23
+Deny from 193.233.208.0/22
+Deny from 193.233.216.0/22
+Deny from 193.233.220.0/22
+Deny from 193.31.127.0/24
+Deny from 193.93.192.0/22
+Deny from 45.145.128.0/23
+Deny from 45.145.130.0/23
+Deny from 185.94.32.0/22
+Deny from 185.77.220.0/24
+Deny from 91.243.92.0/22
+Deny from 85.239.56.0/22
+#added by sjrb 12/9/24 - Crawlers...  High volume, distributed... TransitTraffic, Fine Group
+Deny from 193.233.140.0/22
+Deny from 45.80.106.0/23
+Deny from 185.77.221.0/24
+Deny from 212.119.40.0/23
+#added by sjrb 1/20/25 - Crawlers...  High volume...
+Deny from 139.99.0.0/16
