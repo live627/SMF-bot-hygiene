@@ -1,4 +1,4 @@
-Sitemap: https://www.vguitarforums.com/sitemap_index.xml
+Sitemap: https://yoursitemaphere.xml
 
 User-agent: Googlebot
 Crawl-delay: 30
