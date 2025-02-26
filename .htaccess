@@ -755,3 +755,9 @@ Deny from 185.77.221.0/24
 Deny from 212.119.40.0/23
 #added by sjrb 1/20/25 - Crawlers...  High volume...
 Deny from 139.99.0.0/16
+#added by sjrb 2/25/25 - Crawlers...  High volume, high risk, Internet Utilities
+Deny from 69.176.80.0/20
+#added by sjrb 2/25/25 - Crawlers...  High volume, strange errors, Alibaba
+Deny from 47.74.0.0/15
+Deny from 47.76.0.0/14
+Deny from 47.80.0.0/13
