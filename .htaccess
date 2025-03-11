@@ -411,6 +411,7 @@ BrowserMatchNoCase pavuk bad_bot
 BrowserMatchNoCase pcbrowser bad_bot
 BrowserMatchNoCase pecl::http bad_bot
 BrowserMatchNoCase peoplepal bad_bot
+BrowserMatchNoCase perplexitybot bad_bot
 BrowserMatchNoCase petalbot bad_bot
 BrowserMatchNoCase phpcrawl bad_bot
 BrowserMatchNoCase pi-monster bad_bot
@@ -558,6 +559,7 @@ BrowserMatchNoCase 'the intraformant' bad_bot
 BrowserMatchNoCase thenomad bad_bot
 BrowserMatchNoCase thumbor bad_bot
 BrowserMatchNoCase tighttwatbot bad_bot
+BrowserMatchNoCase tiktokspider bad_bot
 BrowserMatchNoCase tinytestbot bad_bot
 BrowserMatchNoCase titan bad_bot
 BrowserMatchNoCase toata bad_bot
@@ -761,3 +763,10 @@ Deny from 69.176.80.0/20
 Deny from 47.74.0.0/15
 Deny from 47.76.0.0/14
 Deny from 47.80.0.0/13
+#added by sjrb 3/11/25 - Crawlers...  High volume, high risk Ukrtelecom
+Deny from 91.124.117.0/24
+#added by sjrb 3/11/25 - Crawlers...  High volume, Internet Utilities & others
+Deny from 202.155.137.0/24
+Deny from 45.93.184.0/23
+Deny from 146.103.10.0/24
+Deny from 96.62.105.0/24
