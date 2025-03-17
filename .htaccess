@@ -689,7 +689,6 @@ Deny from 47.244.0.0/15
 Deny from 47.235.0.0/16
 Deny from 47.236.0.0/14
 #added by sjrb 9/27/24 - high vol hk/alibaba
-Deny from 47.238.0.0/16
 Deny from 8.218.186.0/24
 #added by sjrb 10/7/24 - hack attempts
 Deny from 45.125.12.0/22
@@ -731,7 +730,6 @@ Deny from 206.41.160.0/19
 #added by sjrb 11/23/24 - More high volume "Likes" attacks, FastPlanet, FutureTech, WebObjects
 Deny from 45.41.128.0/18
 Deny from 45.61.64.0/18
-Deny from 45.192.146.0/24
 Deny from 64.137.80.0/22
 #added by sjrb 11/25/24 - Just random crawlers...  High volume, distributed...
 Deny from 193.233.228.0/22
@@ -894,7 +892,6 @@ Deny from 185.88.102.0/24
 Deny from 185.88.103.0/24
 Deny from 185.89.42.0/24
 Deny from 185.89.43.0/24
-Deny from 185.94.34.0/23
 Deny from 185.96.37.0/24
 Deny from 185.102.112.0/24
 Deny from 185.102.113.0/24
@@ -904,7 +901,6 @@ Deny from 185.152.94.0/24
 Deny from 185.152.95.0/24
 Deny from 193.31.126.0/24
 Deny from 193.56.20.0/24
-Deny from 193.93.194.0/23
 Deny from 193.151.188.0/24
 Deny from 193.151.189.0/24
 Deny from 193.151.190.0/24
