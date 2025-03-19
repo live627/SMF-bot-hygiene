@@ -21,3 +21,4 @@ Everybody's site is a bit different; we are offering these as starter packs for 
 * Crawlers that do not honor robots.txt are blocked.
 * To constuct this list, we started with the useragent list from this site: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/_generator_lists/bad-user-agents.list
 * We removed some valid international crawlers from that list, and have added many new ones, primarily social media sites & AI bots.  
+* We also attempt to restrict IP ranges known for malicious activity.  We do ensure none of our users are in those IP ranges first.
