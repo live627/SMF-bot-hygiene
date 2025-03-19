@@ -15,7 +15,7 @@ Everybody's site is a bit different; we are offering these as starter packs for 
 * Yes, I know Google does not honor crawl-delay, but I can hope.
 
 ## .htaccess Notes & Criteria:
-* My site attempts to allow true search engine crawlers that honor robots.txt.  Even international crawlers, as we support folks from all over the world.
+* Our site attempts to allow true search engine crawlers that honor robots.txt.  Even international crawlers, as we support folks from all over the world.
 * Crawlers that are not for search engines will get blocked, e.g., AI crawlers are blocked.  Social media crawlers are blocked, e.g., Facebook, TikTok, etc.  
 * Crawlers that try to remain anonymous, e.g., by disguising the user agent, are blocked.
 * Crawlers that do not honor robots.txt are blocked.
