@@ -1,4 +1,4 @@
-# Updated 3/11/25
+# Updated 3/26/25
 BrowserMatchNoCase 01h4x.com bad_bot
 BrowserMatchNoCase 360spider bad_bot
 BrowserMatchNoCase 404checker bad_bot
@@ -22,6 +22,7 @@ BrowserMatchNoCase 'alittle client' bad_bot
 BrowserMatchNoCase alligator bad_bot
 BrowserMatchNoCase allsubmitter bad_bot
 BrowserMatchNoCase alphabot bad_bot
+BrowserMatchNoCase amazonbot bad_bot
 BrowserMatchNoCase anarchie bad_bot
 BrowserMatchNoCase anarchy bad_bot
 BrowserMatchNoCase anarchy99 bad_bot
