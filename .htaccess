@@ -1139,7 +1139,7 @@ Deny from 152.53.98.0/24
 Deny from 152.53.100.0/22
 Deny from 152.53.108.0/22
 Deny from 152.53.112.0/22
-Deny from 156.146.33.00/24
+Deny from 156.146.33.0/24
 Deny from 157.15.104.0/23
 Deny from 157.20.246.0/23
 Deny from 157.66.164.0/23
