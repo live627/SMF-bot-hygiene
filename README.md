@@ -26,7 +26,7 @@ Everybody's site is a bit different; we are offering these as starter packs for 
 * Since we have a fair amount of international users, we do not block by country.
 
 ## cidr_list_cleaner.php:
-* The CIDR list you get from an ASN lookup is EXTREMELY inefficient.  Most IP ranges are duplicated or overlap.  Also, many CIDRs are consecutive, and the list can often be simplified by combining consecutive CIDRs.
+* The CIDR list you get from an ASN lookup is EXTREMELY inefficient.  Most IP ranges are duplicated or overlap.  Also, many CIDRs are consecutive, and the list can often be simplified by combining them.
 * This utility cleans up all duplication & overlap & combines adjacent CIDRs where possible, typically resulting in a 98-99% reduction in list size.
 * It can be run from either the command line or a browser.  It accepts a user-specified flat file with a list of valid CIDRs, one per line; output is written to a new file.  Entries that don't match a CIDR format are dropped with an error message.
 * There is no limit to the number of records in the flat file.
