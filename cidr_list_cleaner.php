@@ -40,18 +40,18 @@ $out_file = __DIR__ . '/asn_list_output.txt';
 
 // Start of main program
 if (stripos(PHP_SAPI, 'cli') === false)
-	$eol = '<br>';
+	define('MY_EOL', '<br>');
 else
-	$eol = PHP_EOL;
+	define('MY_EOL', PHP_EOL);
 
-echo 'CIDR List Cleaner input: ' . $in_file . $eol;
+echo 'CIDR List Cleaner input: ' . $in_file . MY_EOL;
 if (!file_exists($in_file))
 	exit('******** Invalid input file ********');
 
 $cidr_list = new CIDR_list($in_file);
 $cidr_list->write($out_file);
 
-echo 'CIDR List Cleaner output: ' . $out_file . $eol;
+echo 'CIDR List Cleaner output: ' . $out_file . MY_EOL;
 // End of main program
 
 // Classes used
@@ -94,16 +94,10 @@ class CIDR
 		$matches = array();
 		preg_match('~^\s*([0-9A-Fa-f\:\.]{2,45})\/(\d{1,3})\b~', $cidr, $matches);
 
-		// In case we have something to display...
-		if (stripos(PHP_SAPI, 'cli') === false)
-			$eol = '<br>';
-		else
-			$eol = PHP_EOL;
-
 		// If no hit at all, just leave with defaults...
 		if (empty($matches))
 		{
-		    echo '*** Invalid CIDR skipped: ' . $cidr . $eol;
+		    echo '*** Invalid CIDR skipped: ' . $cidr . MY_EOL;
 		    return;
 		}
 
@@ -127,7 +121,7 @@ class CIDR
 		}
 		else
 		{
-		    echo '*** Invalid CIDR skipped: ' . $cidr . $eol;
+		    echo '*** Invalid CIDR skipped: ' . $cidr . MY_EOL;
 			return;
 		}
 
@@ -168,7 +162,7 @@ class CIDR
 	 * Algorithm informed by: https://blog.ip2location.com/knowledge-base/how-to-convert-ip-address-range-into-cidr/
 	 * Great article, short & to the point, with examples.
 	 */
-	static function build($min, $max, $int_size = 32)
+	static function build($min, $max, $int_size)
 	{
 		// Need to whittle away at these...  Break one big range down to a number of
 		// smaller ranges that can each be expressed in CIDR format.
@@ -232,7 +226,7 @@ class Packed
 {
 	// Generates packed mask based on specified length...
 	// With $size number of rightmost bits set...
-	static function rmask($size, $int_size = 32)
+	static function rmask($size, $int_size)
 	{
 		$bytes = (int) $int_size / 8;
 		$mask = '';
@@ -252,7 +246,7 @@ class Packed
 
 	// Generates packed mask based on specified length...
 	// With $size number of leftmost bits set...
-	static function lmask($size, $int_size = 32)
+	static function lmask($size, $int_size)
 	{
 		// Heck, leverage the other guy...
 		$mask = Packed::rmask($int_size - $size, $int_size);
@@ -274,7 +268,7 @@ class Packed
 
 	// Translates int to packed.
 	// ***Only works for values small enough to be represented by an int.***
-	static function decpacked($dec, $int_size = 32)
+	static function decpacked($dec, $int_size)
 	{
 		$fmt = ($int_size === 32) ? 'N' : 'J';
 		$packed = pack($fmt, $dec);
@@ -369,7 +363,7 @@ class Packed
 	}
 
 	// Create a packed value for the given power of 2...
-	static function pow2($value, $int_size = 32)
+	static function pow2($value, $int_size)
 	{
 		$bytes = (int) ($int_size / 8);
 		$value = (int) $value;
@@ -448,117 +442,76 @@ class CIDR_list
 		}
 		fclose($fp);
 
-		// Subsequent cleaning needs it sorted...
+		// Subsequent cleaning needs these sorted...
 		ksort($this->cidrs_ipv4);
 		ksort($this->cidrs_ipv6);
 
-		// IPv4: Loop thru & delete items that are already included in previous item...
-		$first_entry = true;
-		foreach ($this->cidrs_ipv4 AS $entry)
-		{
-			if ((!$first_entry) && ($prev_cidr->contains($entry->min_packed) && $prev_cidr->contains($entry->max_packed)))
-				unset($this->cidrs_ipv4[$entry->min_packed]);
-			else
-			{
-				$prev_cidr = $entry;
-				$first_entry = false;
-			}
-		}
-		// IPv6: Loop thru & delete items that are already included in previous item...
-		$first_entry = true;
-		foreach ($this->cidrs_ipv6 AS $entry)
-		{
-			if ((!$first_entry) && ($prev_cidr->contains($entry->min_packed) && $prev_cidr->contains($entry->max_packed)))
-				unset($this->cidrs_ipv6[$entry->min_packed]);
-			else
-			{
-				$prev_cidr = $entry;
-				$first_entry = false;
-			}
-		}
+		// Loop thru & delete items that are already included in previous item...
+		$this->remove_subsets($this->cidrs_ipv4);
+		$this->remove_subsets($this->cidrs_ipv6);
 
-		// IPv4...  Combining consecutive CIDRs...
-		// Note they don't always combine into one, sometimes 15 CIDRs combine into 3...
-		$curr_range_start = '';
-		$curr_range_end = '';
-		$cleansed_cidrs = array();
-		$first_entry = true;
-		foreach ($this->cidrs_ipv4 AS $entry)
-		{
-			if ($first_entry)
-			{
-				$curr_range_start = $entry->min_packed;
-				$curr_range_end = $entry->max_packed;
-				$first_entry = false;
-			}
-			// These are consecutive, combine & keep going, not done yet...
-			elseif (Packed::inc($prev_cidr->max_packed) === $entry->min_packed)
-			{
-				$curr_range_end = $entry->max_packed;
-			}
-			// These are not consecutive, spit out prev CIDR & start a new range to evaluate...
-			else
-			{
-				foreach (CIDR::build($curr_range_start, $curr_range_end, 32) AS $temp)
-					$cleansed_cidrs[] = new CIDR($temp);
-				$curr_range_start = $entry->min_packed;
-				$curr_range_end = $entry->max_packed;
-			}
-			$prev_cidr = $entry;
-		}
-		// Wrapup last range...
-		if (!$first_entry)
-			foreach (CIDR::build($curr_range_start, $curr_range_end, 32) AS $temp)
-				$cleansed_cidrs[] = new CIDR($temp);
-
-		// Update obj list of CIDRs
-		$this->cidrs_ipv4 = $cleansed_cidrs;
-
-		// IPV6...  Combining consecutive CIDRs...
-		// Note they don't always combine into one, sometimes 15 CIDRs combine into 3...
-		$curr_range_start = '';
-		$curr_range_end = '';
-		$cleansed_cidrs = array();
-		$first_entry = true;
-		foreach ($this->cidrs_ipv6 AS $entry)
-		{
-			if ($first_entry)
-			{
-				$curr_range_start = $entry->min_packed;
-				$curr_range_end = $entry->max_packed;
-				$first_entry = false;
-			}
-			// These are consecutive, combine & keep going, not done yet...
-			elseif (Packed::inc($prev_cidr->max_packed) === $entry->min_packed)
-			{
-				$curr_range_end = $entry->max_packed;
-			}
-			// These are not consecutive, spit out prev CIDR & start a new range to evaluate...
-			else
-			{
-				foreach (CIDR::build($curr_range_start, $curr_range_end, 128) AS $temp)
-					$cleansed_cidrs[] = new CIDR($temp);
-				$curr_range_start = $entry->min_packed;
-				$curr_range_end = $entry->max_packed;
-			}
-			$prev_cidr = $entry;
-		}
-		// Wrapup last range...
-		if (!$first_entry)
-			foreach (CIDR::build($curr_range_start, $curr_range_end, 128) AS $temp)
-				$cleansed_cidrs[] = new CIDR($temp);
-
-		// Update obj list of CIDRs
-		$this->cidrs_ipv6 = $cleansed_cidrs;
+		// Combine consecutive CIDRs...
+		$this->cidrs_ipv4 = $this->combine_consecutive($this->cidrs_ipv4, 32);
+		$this->cidrs_ipv6 = $this->combine_consecutive($this->cidrs_ipv6, 128);
 	}
 
-	/**
-	 * Write
-	 *
-	 * Write the cleansed lists to a text file.
-	 *
-	 * @return void
-	 */
+	// Remove subsets
+	public function remove_subsets(&$cidrs)
+	{
+		$first_entry = true;
+		foreach ($cidrs AS $entry)
+		{
+			if ((!$first_entry) && ($prev_cidr->contains($entry->min_packed) && $prev_cidr->contains($entry->max_packed)))
+				unset($cidrs[$entry->min_packed]);
+			else
+			{
+				$prev_cidr = $entry;
+				$first_entry = false;
+			}
+		}
+	}
+
+	// Combine where possible
+	public function combine_consecutive(&$cidrs, $int_size)
+	{
+		// Note they don't always combine into one, sometimes 15 CIDRs combine into 3...
+		$curr_range_start = '';
+		$curr_range_end = '';
+		$cleansed_cidrs = array();
+		$first_entry = true;
+		foreach ($cidrs AS $entry)
+		{
+			if ($first_entry)
+			{
+				$curr_range_start = $entry->min_packed;
+				$curr_range_end = $entry->max_packed;
+				$first_entry = false;
+			}
+			// These are consecutive, combine & keep going, not done yet...
+			elseif (Packed::inc($prev_cidr->max_packed) === $entry->min_packed)
+			{
+				$curr_range_end = $entry->max_packed;
+			}
+			// These are not consecutive, spit out prev CIDR & start a new range to evaluate...
+			else
+			{
+				foreach (CIDR::build($curr_range_start, $curr_range_end, $int_size) AS $temp)
+					$cleansed_cidrs[] = new CIDR($temp);
+				$curr_range_start = $entry->min_packed;
+				$curr_range_end = $entry->max_packed;
+			}
+			$prev_cidr = $entry;
+		}
+		// Wrapup last range...
+		if (!$first_entry)
+			foreach (CIDR::build($curr_range_start, $curr_range_end, $int_size) AS $temp)
+				$cleansed_cidrs[] = new CIDR($temp);
+
+		// Update obj list of CIDRs
+		return $cleansed_cidrs;
+	}
+
+	// Write the cleansed list to a text file.
 	public function write($file)
 	{
 		$fp = fopen($file, 'w');
