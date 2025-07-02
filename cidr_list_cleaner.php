@@ -78,6 +78,7 @@ class CIDR
 
 	public $ipv6 = false;
 	public $valid = false;
+	public $int_size = 32;
 
 	/**
 	 * Constructor
@@ -109,7 +110,7 @@ class CIDR
 			$this->prefix_len = $prefix_len;
 			$this->ipv6 = false;
 			$this->valid = true;
-			$int_size = 32;
+			$this->int_size = 32;
 		}
 		elseif (filter_var($matches[1], FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) && ($prefix_len >= 0) && ($prefix_len <= 128))
 		{
@@ -117,7 +118,7 @@ class CIDR
 			$this->prefix_len = $prefix_len;
 			$this->ipv6 = true;
 			$this->valid = true;
-			$int_size = 128;
+			$this->int_size = 128;
 		}
 		else
 		{
@@ -130,7 +131,7 @@ class CIDR
 		$this->prefix_dec = Packed::packeddec($this->prefix_packed, 2, 10);
 
 		// Calc min & max
-		$ip_mask = Packed::rmask($int_size - $this->prefix_len, $int_size);
+		$ip_mask = Packed::rmask($this->int_size - $this->prefix_len, $this->int_size);
 		$this->max_packed = $this->prefix_packed | $ip_mask;
 		$this->max_ip = inet_ntop($this->max_packed);
 		$this->max_hex = bin2hex($this->max_packed);
@@ -451,8 +452,8 @@ class CIDR_list
 		$this->remove_subsets($this->cidrs_ipv6);
 
 		// Combine consecutive CIDRs...
-		$this->cidrs_ipv4 = $this->combine_consecutive($this->cidrs_ipv4, 32);
-		$this->cidrs_ipv6 = $this->combine_consecutive($this->cidrs_ipv6, 128);
+		$this->cidrs_ipv4 = $this->combine_consecutive($this->cidrs_ipv4);
+		$this->cidrs_ipv6 = $this->combine_consecutive($this->cidrs_ipv6);
 	}
 
 	// Remove subsets
@@ -472,7 +473,7 @@ class CIDR_list
 	}
 
 	// Combine where possible
-	public function combine_consecutive(&$cidrs, $int_size)
+	public function combine_consecutive(&$cidrs)
 	{
 		// Note they don't always combine into one, sometimes 15 CIDRs combine into 3...
 		$curr_range_start = '';
@@ -485,6 +486,7 @@ class CIDR_list
 			{
 				$curr_range_start = $entry->min_packed;
 				$curr_range_end = $entry->max_packed;
+				$int_size = $entry->int_size;
 				$first_entry = false;
 			}
 			// These are consecutive, combine & keep going, not done yet...
