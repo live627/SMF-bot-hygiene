@@ -208,13 +208,14 @@ class CIDR
 				$prefix = $smallest_prefix;
 
 			$cidrs[] = inet_ntop($min) . '/' . $prefix;
-			// This can happen when testing extremes & need more bits than you got...
-			// Face it, you're done already...
-			if (($prefix === 0) || ($max <= $min))
-				break;
 
 			$pow2 = Packed::pow2($int_size - $prefix, $int_size);
 			$min = Packed::add($min, $pow2);
+
+			// This can happen when testing extremes & need more bits than you got...
+			// Face it, you're done already...
+			if (($prefix === 0) || (Packed::is_zero($min)))
+				break;
 		}
 		return $cidrs;
 	}
