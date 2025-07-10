@@ -3,14 +3,14 @@
  * CIDR List Cleaner
  *
  * CIDR List Cleaner cleans up lengthy lists of CIDRs, e.g., from an ASN lookup.
- * IPv4 & IPv6 supported.
+ * IPv4 & IPv6 supported.  List may contain IPs as well.  No embedded spaces allowed.
  *
  * ASN lists usually have massive amounts of duplication & overlap, and
  * frequently display large ip ranges as hundreds of smaller consecutive
  * ranges.  This utility cleans up duplication & overlap, and combines
  * ranges where possible.  The result can be a 98-99% reduction in list size.
  *
- * Input file must ONLY contain a list of CIDRs, one CIDR per line, in text.
+ * Input file must ONLY contain a list of CIDRs & IPs, one per line, in text.
  * The input file must be specified in the user configuration section below.
  *
  * To support ipv6 (128-bit unsigned ints), it works solely on the raw binary data.
@@ -83,8 +83,8 @@ class CIDR
 	/**
 	 * Constructor
 	 *
-	 * Builds a CIDR object.  Input is a string.
-	 * Will build valid objects for ipv4 or ipv6 CIDRs.
+	 * Builds a CIDR object.  Input is a string, containing a CIDR or an IP address.
+	 * No spaces within CIDR/IP string.  Will build valid objects for ipv4 or ipv6 CIDRs.
 	 *
 	 * @param string $cidr
 	 * @return void
@@ -93,38 +93,57 @@ class CIDR
 	{
 		// [0] = whole, [1] = prefix, [2] = prefix length
 		$matches = array();
-		preg_match('~^\s*([0-9A-Fa-f\:\.]{2,45})\/(\d{1,3})\b~', $cidr, $matches);
+		preg_match('~^\s*([^\/\s]{2,45})(\/.*)?~', $cidr, $matches);
 
-		// If no hit at all, just leave with defaults...
+		// No hit at all...
 		if (empty($matches))
 		{
 		    echo '*** Invalid CIDR skipped: ' . $cidr . MY_EOL;
 		    return;
 		}
 
-		// Prefix must be a valid IP...  Length must be valid per ipv4/ipv6.
-		$prefix_len = (int) $matches[2];
-		if (filter_var($matches[1], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) && ($prefix_len >= 0) && ($prefix_len <= 32))
+		// Prefix must be a valid IP...
+		if (filter_var($matches[1], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4))
 		{
 			$this->prefix = $matches[1];
-			$this->prefix_len = $prefix_len;
 			$this->ipv6 = false;
-			$this->valid = true;
 			$this->int_size = 32;
 		}
-		elseif (filter_var($matches[1], FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) && ($prefix_len >= 0) && ($prefix_len <= 128))
+		elseif (filter_var($matches[1], FILTER_VALIDATE_IP, FILTER_FLAG_IPV6))
 		{
 			$this->prefix = $matches[1];
-			$this->prefix_len = $prefix_len;
 			$this->ipv6 = true;
-			$this->valid = true;
 			$this->int_size = 128;
 		}
 		else
 		{
-		    echo '*** Invalid CIDR skipped: ' . $cidr . MY_EOL;
+		    echo '*** Invalid CIDR prefix skipped: ' . $cidr . MY_EOL;
 			return;
 		}
+
+		// If provided, length must be valid per ipv4/ipv6.
+		if (isset($matches[2]))
+		{
+			$pfx_match = array();
+			preg_match('~\/(\d{1,3})\b~', $matches[2], $pfx_match);
+			if (!empty($pfx_match) && (((int) $pfx_match[1]) >= 0) && (((int) $pfx_match[1]) <= $this->int_size))
+			{
+				$this->prefix_len =  (int) $pfx_match[1];
+			}
+			else
+			{
+				echo '*** Invalid CIDR length skipped: ' . $cidr . MY_EOL;
+				return;
+			}
+		}
+		else
+		{
+			// if Length not provided, it is an IP, so use int_size...
+			$this->prefix_len = $this->int_size;
+		}
+
+		// OK, you've run the gauntlet...
+		$this->valid = true;
 
 		$this->prefix_packed = inet_pton($this->prefix);
 		$this->prefix_hex = bin2hex($this->prefix_packed);
@@ -175,7 +194,7 @@ class CIDR
 		while($max >= $min)
 		{
 			// $prefix = current subrange prefix; find the biggest prefix that works via
-			// stepping thru left-justified masks.
+			// stepping thru left-justified masks.  ((Int_size - 0) bits on the right of $min...)
 			$prefix = $int_size;
 			while ($prefix > 0)
 			{
@@ -186,8 +205,8 @@ class CIDR
 				$prefix--;
 			}
 
-			// $smallest_prefix = covers the biggest chunk for the remaining range... small prefix = big #...
-			//  (= count up to first 1 in binary representation of $diff...)
+			// $smallest_prefix = biggest power of 2 that stays within the remaining range... small prefix = big #...
+			//  (= Count up to first 1 bit in binary representation of $diff...)
 			// $diff = $max - $min + 1 = number of IPs in range
 			$diff = Packed::subtract($max, $min);
 			$diff = Packed::inc($diff);
