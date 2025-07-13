@@ -749,6 +749,7 @@ Deny from 45.148.232.0/22
 Deny from 45.155.166.0/23
 Deny from 45.159.20.0/23
 Deny from 45.159.23.0/24
+Deny from 45.187.84.0/22
 Deny from 45.192.0.0/12
 Deny from 46.161.56.0/21
 Deny from 47.74.0.0/15
