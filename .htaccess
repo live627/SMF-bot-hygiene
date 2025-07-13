@@ -680,7 +680,7 @@ Order Allow,Deny
 Allow from all
 Deny from env=bad_bot
 </Limit>
-# Updated 6/30/25
+# Updated 7/12/25
 Deny from 2.57.104.0/22
 Deny from 5.181.168.0/22
 Deny from 5.183.252.0/22
@@ -831,6 +831,7 @@ Deny from 103.35.104.0/22
 Deny from 103.58.41.0/24
 Deny from 103.65.230.0/24
 Deny from 103.132.80.0/23
+Deny from 103.138.146.0/24
 Deny from 103.175.79.0/24
 Deny from 103.192.0.0/23
 Deny from 103.232.166.0/23
