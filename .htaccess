@@ -675,6 +675,11 @@ BrowserMatchNoCase zoombot bad_bot
 BrowserMatchNoCase zoominfobot bad_bot
 BrowserMatchNoCase zumbot bad_bot
 BrowserMatchNoCase zyborg bad_bot
+# Updated 7/23/25 - Block chrome < v80.0, FF < v100.0 & any Opera < v10.0
+BrowserMatchNoCase "Chrome/\d\." bad_bot
+BrowserMatchNoCase "Chrome/[0-7]\d\." bad_bot
+BrowserMatchNoCase "Firefox/\d\d\." bad_bot
+BrowserMatchNoCase "Opera/\d\." bad_bot
 <Limit GET POST HEAD>
 Order Allow,Deny
 Allow from all
