@@ -19,7 +19,7 @@ Everybody's site is a bit different; we are offering these as starter packs for 
 * Crawlers that are not for search engines will get blocked, e.g., AI crawlers are blocked.  Social media crawlers are blocked, e.g., Facebook, TikTok, etc.  
 * Crawlers that try to remain anonymous, e.g., by disguising the user agent, are blocked.
 * Crawlers that do not honor robots.txt are blocked.
-* We also now block when we see old browsers in the useragent, as this appears to be 100% bot activity - Chrome < v80.0, Firefox < 100.0 & Opera < 10.0.
+* We also now block when we see old browser versions in the useragent, as this appears to be 100% bot activity - Chrome < 80.0, Firefox < 100.0 & Opera < 10.0.
 * To constuct this list, we started with the useragent list from this site: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/_generator_lists/bad-user-agents.list
 * We removed some valid international crawlers from that list, and have added many new ones, primarily social media sites & AI bots.  
 * We also attempt to restrict IP ranges known for malicious activity or aggressive crawling.
