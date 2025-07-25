@@ -1,4 +1,4 @@
-# Updated 6/17/25
+# Updated 7/25/25
 BrowserMatchNoCase 01h4x.com bad_bot
 BrowserMatchNoCase 360spider bad_bot
 BrowserMatchNoCase 404checker bad_bot
@@ -556,6 +556,7 @@ BrowserMatchNoCase telesphoreo bad_bot
 BrowserMatchNoCase telesphorep bad_bot
 BrowserMatchNoCase 'the intraformant' bad_bot
 BrowserMatchNoCase thenomad bad_bot
+BrowserMatchNoCase thinkbot bad_bot
 BrowserMatchNoCase thumbor bad_bot
 BrowserMatchNoCase tighttwatbot bad_bot
 BrowserMatchNoCase tiktokspider bad_bot
